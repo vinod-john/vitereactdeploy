@@ -1,0 +1,52 @@
+/* Define the jiggle animation */
+@keyframes jiggle {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Base styles for the title */
+.colorful-title {
+  font-size: 2rem; /* Responsive font size */
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(
+    45deg,
+    #ff6f61,
+    #d500f9,
+    #4caf50,
+    #ffeb3b
+  ); /* Colorful gradient background */
+  -webkit-background-clip: text; /* Clip the background to text for WebKit browsers */
+  background-clip: text; /* Standard property */
+  color: transparent; /* Transparent text to show gradient */
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Apply jiggle animation on hover */
+.colorful-title:hover {
+  animation: jiggle 0.5s ease;
+  background: linear-gradient(
+    45deg,
+    #ffeb3b,
+    #ff6f61,
+    #d500f9,
+    #4caf50
+  ); /* Change gradient on hover */
+  transform: scale(1.1); /* Slightly enlarge the text */
+}
